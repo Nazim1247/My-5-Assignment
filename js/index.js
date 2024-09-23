@@ -24,6 +24,18 @@ document.getElementById('donation-btn').addEventListener('click', function(){
     else{
         alert('your donation is not valid');
     }
+
+    const historyList = document.createElement('div');
+    historyList.innerHTML = `
+    <p>Donation: $${donationAmount} Taka is Donated for famine-2024 at Feni, Bangladesh</p>
+    <p>${new Date()}</p>
+    `
+    const historyContainer = document.getElementById('history-list');
+    historyContainer.appendChild(historyList);
+
+    // document.getElementById('btn-modal').addEventListener('click', function(){
+    //     window.location.reload();
+    // })
 });
 
 
@@ -46,14 +58,14 @@ history.addEventListener('click', function(){
     // calculate history 
     document.getElementById('history-list').classList.remove('hidden');
     
-    // historyList
-    const historyList = document.createElement('div');
-    historyList.innerHTML = `
-    <p>${new Date().toLocaleDateString()}</p>
-    // <p>Donation: ${donationAmount.toFixed(2)}</p>
-    `
-    const historyContainer = document.getElementById('history-list');
-    historyList.appendChild(historyContainer);
+    // // historyList
+    // const historyList = document.createElement('div');
+    // historyList.innerHTML = `
+    // <p>${new Date().toLocaleDateString()}</p>
+    // <p>Donation: $${donationAmount}</p>
+    // `
+    // const historyContainer = document.getElementById('history-list');
+    // historyContainer.appendChild(historyList);
  
 });
 
