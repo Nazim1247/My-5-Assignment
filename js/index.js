@@ -1,3 +1,9 @@
+
+// blog btn 
+document.getElementById('blog-btn').addEventListener('click', function(){
+    window.location.href = 'home.html';
+});
+
 // donation button 
 document.getElementById('donation-btn').addEventListener('click', function(){
     
@@ -17,7 +23,7 @@ document.getElementById('donation-btn').addEventListener('click', function(){
     const newAvailableBalance = availableBalance - donationAmount;
     availableBalance.innerText = newAvailableBalance;
 
-    document.getElementById('available-balance').innerText = newAvailableBalance;
+    document.getElementById('available-balance').innerText = newAvailableBalance.toFixed(2);
 
     // historyList
     const historyList = document.createElement('div');
@@ -34,10 +40,36 @@ document.getElementById('donation-btn').addEventListener('click', function(){
 
     }
     else{
-        alert('your donation is not valid');
+        alert('Your Donation is not valid');
     }
-
 });
+
+// donation 2
+document.getElementById('donation-btn2').addEventListener('click', function(){
+    const donationAmount2 = parseFloat(document.getElementById('donation-amount2').value);
+    if(!isNaN(donationAmount2) && donationAmount2 > 0){
+        const donationBalance2 = parseFloat(document.getElementById('donation-balance2').innerText);
+        const newBalance2 = donationAmount2 + donationBalance2;
+        document.getElementById('donation-balance2').innerText = newBalance2.toFixed(2);
+        const availableBalance2 = parseFloat(document.getElementById('available-balance').innerText);
+        const newAvailableBalance2 = availableBalance2 - donationAmount2;
+        document.getElementById('available-balance').innerText = newAvailableBalance2.toFixed(2);
+        // historyList
+    const historyList = document.createElement('div');
+    historyList.innerHTML = `
+    <p class ="text-xl font-bold">${donationAmount2} Taka is Donated for famine-2024 at Feni, Bangladesh</p>
+    <p class ="text-gray-400">${new Date()}</p>
+    `
+    const historyContainer = document.getElementById('history-list');
+    historyContainer.appendChild(historyList);
+    // modal
+    document.getElementById('my_modal_1');
+    my_modal_1.showModal();
+     }else{
+        alert('Your Donation is not valid');
+    }
+    
+})
 
 
 // history

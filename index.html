@@ -14,14 +14,14 @@
     <style>
         .lexend-font{
             font-family: "Lexend", sans-serif;
-        }
+        };
     </style>
 </head>
 <body class="lexend-font max-w-1024 mx-auto">
     <header class="bg-yellow-50 py-4">
         <div class="navbar w-11/12 mx-auto">
             <div class="navbar-start">
-                <button class="bg-[#B4F461] py-2 px-5 rounded-lg font-bold">Blog</button>
+                <button id="blog-btn" class="bg-[#B4F461] py-2 px-5 rounded-lg font-bold">Blog</button>
               </div>
             <div class="navbar-center">
               <p class="flex justify-center items-center space-x-3">
@@ -69,12 +69,12 @@
             <div class="w-full mx-auto space-y-5 mt-5 lg:mt-0">
                 <button class="btn flex justify-center items-center space-x-2">
                     <img src="assets/coin.png" alt="">
-                    <span class="text-gray-500">600 BDT</span>
+                    <span id="donation-balance2" class="text-gray-500">600 BDT</span>
                 </button>
                 <h3 class="font-bold">Donate for Flood at Noakhali, Bangladesh</h3>
                 <p class="text-gray-500">The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-                <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
-                <button class="btn bg-[#B4F461] w-full font-bold">Donate Now</button>
+                <input id="donation-amount2" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+                <button id="donation-btn2" class="btn bg-[#B4F461] w-full font-bold">Donate Now</button>
             </div>
         </div>
         <!-- card 3 -->
@@ -89,8 +89,8 @@
                 </button>
                 <h3 class="font-bold">Donate for Flood at Noakhali, Bangladesh</h3>
                 <p class="text-gray-500">The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-                <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
-                <button class="btn bg-[#B4F461] w-full font-bold">Donate Now</button>
+                <input id="donation-amount3" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+                <button id="donation-btn3" class="btn bg-[#B4F461] w-full font-bold">Donate Now</button>
             </div>
         </div>
         </div>
@@ -108,19 +108,11 @@
       </form>
     </div>
   </div>
-</dialog>
+    </dialog>
         <!-- history -->
-         <div id="history-list" class="hidden border border-1 shadow-md rounded-lg w-8/12 mx-auto p-5 my-5 space-y-5">
+         <div id="history-list" class="hidden border border-1 shadow-sm rounded-lg w-11/12 mx-auto p-5 my-5 space-y-5">
 
          </div>
-        <!-- <div>
-            <div tabindex="0" class="collapse bg-base-200">
-                <div class="collapse-title text-xl font-medium">Focus me to see content</div>
-                <div class="collapse-content">
-                  <p>tabindex="0" attribute is necessary to make the div focusable</p>
-                </div>
-              </div>
-        </div> -->
     </main>
     <script src="js/index.js"></script>
 </body>
