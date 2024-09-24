@@ -8,21 +8,15 @@ document.getElementById('blog-btn').addEventListener('click', function(){
 document.getElementById('donation-btn').addEventListener('click', function(){
     
     const donationAmount = parseFloat(document.getElementById('donation-amount').value);
-
-    if(!isNaN(donationAmount) && donationAmount > 0){
-
+    const availableBalance = parseFloat(document.getElementById('available-balance').innerText);
     const donationBalance = parseFloat(document.getElementById('donation-balance').innerText);
+
+    if(!isNaN(donationAmount) && donationAmount > 0 && availableBalance > donationAmount){
     
      const newBalance = donationAmount + donationBalance;
-
     document.getElementById('donation-balance').innerText = newBalance.toFixed(2);
 
-    const availableBalanceEl = document.getElementById('available-balance');
-    
-    const availableBalance = parseFloat(availableBalanceEl.innerText);
     const newAvailableBalance = availableBalance - donationAmount;
-    availableBalance.innerText = newAvailableBalance;
-
     document.getElementById('available-balance').innerText = newAvailableBalance.toFixed(2);
 
     // historyList
@@ -37,21 +31,20 @@ document.getElementById('donation-btn').addEventListener('click', function(){
     // modal
     document.getElementById('my_modal_1');
     my_modal_1.showModal();
-
     }
     else{
         alert('Your Donation is not valid');
     }
 });
 
-// donation 2
+// donation button 2
 document.getElementById('donation-btn2').addEventListener('click', function(){
     const donationAmount2 = parseFloat(document.getElementById('donation-amount2').value);
-    if(!isNaN(donationAmount2) && donationAmount2 > 0){
-        const donationBalance2 = parseFloat(document.getElementById('donation-balance2').innerText);
+    const donationBalance2 = parseFloat(document.getElementById('donation-balance2').innerText);
+    const availableBalance2 = parseFloat(document.getElementById('available-balance').innerText);
+    if(!isNaN(donationAmount2) && donationAmount2 > 0 && availableBalance2 > donationAmount2){
         const newBalance2 = donationAmount2 + donationBalance2;
         document.getElementById('donation-balance2').innerText = newBalance2.toFixed(2);
-        const availableBalance2 = parseFloat(document.getElementById('available-balance').innerText);
         const newAvailableBalance2 = availableBalance2 - donationAmount2;
         document.getElementById('available-balance').innerText = newAvailableBalance2.toFixed(2);
         // historyList
@@ -67,10 +60,34 @@ document.getElementById('donation-btn2').addEventListener('click', function(){
     my_modal_1.showModal();
      }else{
         alert('Your Donation is not valid');
-    }
-    
-})
+    }; 
+});
 
+// donation button 3
+document.getElementById('donation-btn3').addEventListener('click', function(){
+    const donationAmount3 = parseFloat(document.getElementById('donation-amount3').value);
+    const donationBalance3 = parseFloat(document.getElementById('donation-balance3').innerText);
+    const availableBalance3 = parseFloat(document.getElementById('available-balance').innerText);
+    if(!isNaN(donationAmount3) && donationAmount3 >0 && availableBalance3 > donationAmount3){
+        const newBalance3 = donationBalance3 + donationAmount3;
+        document.getElementById('donation-balance3').innerText = newBalance3.toFixed(2);
+        const newAvailableBalance3 = availableBalance3 - donationAmount3;
+        document.getElementById('available-balance').innerText = newAvailableBalance3.toFixed(2);
+        // historyList
+    const historyList = document.createElement('div');
+    historyList.innerHTML = `
+    <p class ="text-xl font-bold">${donationAmount3} Taka is Donated for famine-2024 at Feni, Bangladesh</p>
+    <p class ="text-gray-400">${new Date()}</p>
+    `
+    const historyContainer = document.getElementById('history-list');
+    historyContainer.appendChild(historyList);
+    // modal
+    document.getElementById('my_modal_1');
+    my_modal_1.showModal();
+    }else{
+        alert('Your Donation is not valid');
+    };
+});
 
 // history
 const history = document.getElementById('history');
