@@ -95,28 +95,24 @@
         </div>
         </div>
          <!-- Open the modal using ID.showModal() method -->
-      <button class="btn" onclick="my_modal_1.showModal()"></button>
+      <button class="hidden btn" onclick="my_modal_1.showModal()"></button>
     <dialog id="my_modal_1" class="modal">
     <div class="modal-box">
-    <h3 class="text-lg font-bold">Hello!</h3>
-    <p class="py-4">Press ESC key or click the button below to close</p>
-    <div class="modal-action">
+    <h3 class="text-2xl font-bold text-center">Congrats!</h3>
+    <div class="flex justify-center mb-4 mt-2"><img src="assets/coin.png" alt=""></div>
+    <p class="text-center mb-3 text-gray-400">You Have Donated for Humankind</p>
+    <p class="text-center font-bold">Successfully</p>
+    <div class="modal-action flex justify-center">
       <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
-        <button id="btn-modal" class="btn">Close</button>
+        <button class="btn font-semibold">Close confirmation</button>
       </form>
     </div>
   </div>
 </dialog>
         <!-- history -->
-         <div id="history-list" class="border border-1 shadow-md rounded-lg w-6/12 mx-auto p-5">
+         <div id="history-list" class="hidden border border-1 shadow-md rounded-lg w-8/12 mx-auto p-5 my-5 space-y-5">
 
          </div>
-         <!-- <div id="calculate-history" class="hidden text-center">
-            <h3>Donation Amount</h3>
-            <p>00 BDT</p>
-            <p>date:</p>
-         </div> -->
         <!-- <div>
             <div tabindex="0" class="collapse bg-base-200">
                 <div class="collapse-title text-xl font-medium">Focus me to see content</div>
