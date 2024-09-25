@@ -1,18 +1,18 @@
 function getDonationValueById(id){
     const inputValue = document.getElementById(id).value;
-    const inputNumber = parseFloat(inputValue);
+    const inputNumber = Number(inputValue);
     return inputNumber;
 };
 
 function getBalanceValueById(id){
     const textValue = document.getElementById(id).innerText;
-    const textNumber = parseFloat(textValue);
+    const textNumber = Number(textValue);
     return textNumber;
 };
 
 function getAvailableBalanceById(id){
     const availableBalance = document.getElementById(id).innerText;
-    const availableBalanceNumber = parseFloat(availableBalance);
+    const availableBalanceNumber = Number(availableBalance);
     return availableBalanceNumber;
 };
 

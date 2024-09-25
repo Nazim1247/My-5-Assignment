@@ -7,12 +7,12 @@ document.getElementById('blog-btn').addEventListener('click', function(){
 // donation card 1 
 document.getElementById('donation-btn').addEventListener('click', function(){
      
-    const donationAmount = parseFloat(document.getElementById('donation-amount').value);
-    const availableBalance = parseFloat(document.getElementById('available-balance').innerText);
-    const donationBalance = parseFloat(document.getElementById('donation-balance').innerText);
+    const donationAmount = Number(document.getElementById('donation-amount').value);
+    const availableBalance = Number(document.getElementById('available-balance').innerText);
+    const donationBalance = Number(document.getElementById('donation-balance').innerText);
 
     if(!isNaN(donationAmount) && donationAmount > 0 && availableBalance > donationAmount){
-        
+    
      const newBalance = donationAmount + donationBalance;
     document.getElementById('donation-balance').innerText = newBalance.toFixed(2);
 
@@ -40,9 +40,9 @@ document.getElementById('donation-btn').addEventListener('click', function(){
 
 // donation card 2
 document.getElementById('donation-btn2').addEventListener('click', function(){
-    const donationAmount2 = parseFloat(document.getElementById('donation-amount2').value);
-    const donationBalance2 = parseFloat(document.getElementById('donation-balance2').innerText);
-    const availableBalance2 = parseFloat(document.getElementById('available-balance').innerText);
+    const donationAmount2 = Number(document.getElementById('donation-amount2').value);
+    const donationBalance2 = Number(document.getElementById('donation-balance2').innerText);
+    const availableBalance2 = Number(document.getElementById('available-balance').innerText);
     if(!isNaN(donationAmount2) && donationAmount2 > 0 && availableBalance2 > donationAmount2){
         const newBalance2 = donationAmount2 + donationBalance2;
         document.getElementById('donation-balance2').innerText = newBalance2.toFixed(2);
@@ -65,31 +65,6 @@ document.getElementById('donation-btn2').addEventListener('click', function(){
     }; 
 });
 
-// donation card 3
-// document.getElementById('donation-btn3').addEventListener('click', function(){
-//     const donationAmount3 = parseFloat(document.getElementById('donation-amount3').value);
-//     const donationBalance3 = parseFloat(document.getElementById('donation-balance3').innerText);
-//     const availableBalance3 = parseFloat(document.getElementById('available-balance').innerText);
-//     if(!isNaN(donationAmount3) && donationAmount3 >0 && availableBalance3 > donationAmount3){
-//         const newBalance3 = donationBalance3 + donationAmount3;
-//         document.getElementById('donation-balance3').innerText = newBalance3.toFixed(2);
-//         const newAvailableBalance3 = availableBalance3 - donationAmount3;
-//         document.getElementById('available-balance').innerText = newAvailableBalance3.toFixed(2);
-//         // historyList
-//     const historyList = document.createElement('div');
-//     historyList.innerHTML = `
-//     <p class ="text-xl font-bold">${donationAmount3} Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh</p>
-//     <p class ="text-gray-400">${new Date()}</p>
-//     `
-//     const historyContainer = document.getElementById('history-list');
-//     historyContainer.appendChild(historyList);
-//     // modal
-//     document.getElementById('my_modal_1');
-//     my_modal_1.showModal();
-//     }else{
-//         alert('Your Donation is not valid');
-//     };
-// });
 
 // historyBtn
 const history = document.getElementById('history');
@@ -128,20 +103,3 @@ donationBtn.addEventListener('click', function(){
     document.getElementById('history-list').classList.add('hidden');
 });
 
-// // created a function
-// document.getElementById('donation-btn3').addEventListener('click', function(){
-
-//     const donationMony = getDonationValueById('donation-amount3');
-//     const balance = getBalanceValueById('donation-balance3');
-//     const showAvailableBalance = getAvailableBalanceById('available-balance');
-    
-//     if(!isNaN(donationMony) && donationMony > 0 && showAvailableBalance > donationMony){
-//         const updatedBalance = donationMony + balance;
-//         document.getElementById('donation-balance3').innerText = updatedBalance.toFixed(2);
-
-//         const updatedAvailableBalance = showAvailableBalance - donationMony;
-//         document.getElementById('available-balance').innerText = updatedAvailableBalance.toFixed(2);
-//     }else{
-//         alert('Your Donation is not valid');
-//     }
-// })
