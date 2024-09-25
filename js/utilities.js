@@ -38,7 +38,7 @@ document.getElementById('donation-btn3').addEventListener('click', function(){
     <p class ="text-gray-400">${new Date()}</p>
     `
     const historyContainer = document.getElementById('history-list');
-    historyContainer.insertBefore(historyList, historyContainer.firstChild);
+    historyContainer.appendChild(historyList);
     // modal
     document.getElementById('my_modal_1');
     my_modal_1.showModal();
