@@ -12,7 +12,7 @@ document.getElementById('donation-btn').addEventListener('click', function(){
     const donationBalance = parseFloat(document.getElementById('donation-balance').innerText);
 
     if(!isNaN(donationAmount) && donationAmount > 0 && availableBalance > donationAmount){
-    
+        
      const newBalance = donationAmount + donationBalance;
     document.getElementById('donation-balance').innerText = newBalance.toFixed(2);
 
