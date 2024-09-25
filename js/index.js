@@ -4,9 +4,9 @@ document.getElementById('blog-btn').addEventListener('click', function(){
     window.location.href = 'home.html';
 });
 
-// donation button 
+// donation card 1 
 document.getElementById('donation-btn').addEventListener('click', function(){
-    
+     
     const donationAmount = parseFloat(document.getElementById('donation-amount').value);
     const availableBalance = parseFloat(document.getElementById('available-balance').innerText);
     const donationBalance = parseFloat(document.getElementById('donation-balance').innerText);
@@ -21,12 +21,13 @@ document.getElementById('donation-btn').addEventListener('click', function(){
 
     // historyList
     const historyList = document.createElement('div');
+    historyList.className = 'border border-1 p-5 rounded-lg';
     historyList.innerHTML = `
     <p class ="text-xl font-bold">${donationAmount} Taka is Donated for famine-2024 at Feni, Bangladesh</p>
     <p class ="text-gray-400">${new Date()}</p>
     `
     const historyContainer = document.getElementById('history-list');
-    historyContainer.appendChild(historyList);
+    historyContainer.insertBefore(historyList, historyContainer.firstChild);
 
     // modal
     document.getElementById('my_modal_1');
@@ -37,7 +38,7 @@ document.getElementById('donation-btn').addEventListener('click', function(){
     }
 });
 
-// donation button 2
+// donation card 2
 document.getElementById('donation-btn2').addEventListener('click', function(){
     const donationAmount2 = parseFloat(document.getElementById('donation-amount2').value);
     const donationBalance2 = parseFloat(document.getElementById('donation-balance2').innerText);
@@ -49,12 +50,13 @@ document.getElementById('donation-btn2').addEventListener('click', function(){
         document.getElementById('available-balance').innerText = newAvailableBalance2.toFixed(2);
         // historyList
     const historyList = document.createElement('div');
+    historyList.className = 'border border-1 p-5 rounded-lg';
     historyList.innerHTML = `
     <p class ="text-xl font-bold">${donationAmount2} Taka is Donated for Flood Relief in Feni,Bangladesh</p>
     <p class ="text-gray-400">${new Date()}</p>
     `
     const historyContainer = document.getElementById('history-list');
-    historyContainer.appendChild(historyList);
+    historyContainer.insertBefore(historyList, historyContainer.firstChild);
     // modal
     document.getElementById('my_modal_1');
     my_modal_1.showModal();
@@ -63,35 +65,34 @@ document.getElementById('donation-btn2').addEventListener('click', function(){
     }; 
 });
 
-// donation button 3
-document.getElementById('donation-btn3').addEventListener('click', function(){
-    const donationAmount3 = parseFloat(document.getElementById('donation-amount3').value);
-    const donationBalance3 = parseFloat(document.getElementById('donation-balance3').innerText);
-    const availableBalance3 = parseFloat(document.getElementById('available-balance').innerText);
-    if(!isNaN(donationAmount3) && donationAmount3 >0 && availableBalance3 > donationAmount3){
-        const newBalance3 = donationBalance3 + donationAmount3;
-        document.getElementById('donation-balance3').innerText = newBalance3.toFixed(2);
-        const newAvailableBalance3 = availableBalance3 - donationAmount3;
-        document.getElementById('available-balance').innerText = newAvailableBalance3.toFixed(2);
-        // historyList
-    const historyList = document.createElement('div');
-    historyList.innerHTML = `
-    <p class ="text-xl font-bold">${donationAmount3} Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh</p>
-    <p class ="text-gray-400">${new Date()}</p>
-    `
-    const historyContainer = document.getElementById('history-list');
-    historyContainer.appendChild(historyList);
-    // modal
-    document.getElementById('my_modal_1');
-    my_modal_1.showModal();
-    }else{
-        alert('Your Donation is not valid');
-    };
-});
+// donation card 3
+// document.getElementById('donation-btn3').addEventListener('click', function(){
+//     const donationAmount3 = parseFloat(document.getElementById('donation-amount3').value);
+//     const donationBalance3 = parseFloat(document.getElementById('donation-balance3').innerText);
+//     const availableBalance3 = parseFloat(document.getElementById('available-balance').innerText);
+//     if(!isNaN(donationAmount3) && donationAmount3 >0 && availableBalance3 > donationAmount3){
+//         const newBalance3 = donationBalance3 + donationAmount3;
+//         document.getElementById('donation-balance3').innerText = newBalance3.toFixed(2);
+//         const newAvailableBalance3 = availableBalance3 - donationAmount3;
+//         document.getElementById('available-balance').innerText = newAvailableBalance3.toFixed(2);
+//         // historyList
+//     const historyList = document.createElement('div');
+//     historyList.innerHTML = `
+//     <p class ="text-xl font-bold">${donationAmount3} Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh</p>
+//     <p class ="text-gray-400">${new Date()}</p>
+//     `
+//     const historyContainer = document.getElementById('history-list');
+//     historyContainer.appendChild(historyList);
+//     // modal
+//     document.getElementById('my_modal_1');
+//     my_modal_1.showModal();
+//     }else{
+//         alert('Your Donation is not valid');
+//     };
+// });
 
-// history
+// historyBtn
 const history = document.getElementById('history');
-// donation 
 const donation = document.getElementById('donation');
 
 history.addEventListener('click', function(){
@@ -126,3 +127,21 @@ donationBtn.addEventListener('click', function(){
 
     document.getElementById('history-list').classList.add('hidden');
 });
+
+// // created a function
+// document.getElementById('donation-btn3').addEventListener('click', function(){
+
+//     const donationMony = getDonationValueById('donation-amount3');
+//     const balance = getBalanceValueById('donation-balance3');
+//     const showAvailableBalance = getAvailableBalanceById('available-balance');
+    
+//     if(!isNaN(donationMony) && donationMony > 0 && showAvailableBalance > donationMony){
+//         const updatedBalance = donationMony + balance;
+//         document.getElementById('donation-balance3').innerText = updatedBalance.toFixed(2);
+
+//         const updatedAvailableBalance = showAvailableBalance - donationMony;
+//         document.getElementById('available-balance').innerText = updatedAvailableBalance.toFixed(2);
+//     }else{
+//         alert('Your Donation is not valid');
+//     }
+// })
