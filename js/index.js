@@ -50,7 +50,7 @@ document.getElementById('donation-btn2').addEventListener('click', function(){
         // historyList
     const historyList = document.createElement('div');
     historyList.innerHTML = `
-    <p class ="text-xl font-bold">${donationAmount2} Taka is Donated for famine-2024 at Feni, Bangladesh</p>
+    <p class ="text-xl font-bold">${donationAmount2} Taka is Donated for Flood Relief in Feni,Bangladesh</p>
     <p class ="text-gray-400">${new Date()}</p>
     `
     const historyContainer = document.getElementById('history-list');
@@ -76,7 +76,7 @@ document.getElementById('donation-btn3').addEventListener('click', function(){
         // historyList
     const historyList = document.createElement('div');
     historyList.innerHTML = `
-    <p class ="text-xl font-bold">${donationAmount3} Taka is Donated for famine-2024 at Feni, Bangladesh</p>
+    <p class ="text-xl font-bold">${donationAmount3} Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh</p>
     <p class ="text-gray-400">${new Date()}</p>
     `
     const historyContainer = document.getElementById('history-list');
